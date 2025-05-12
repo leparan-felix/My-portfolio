@@ -13,6 +13,7 @@ function AboutMe() {
         <li>React.js</li>
         <li>Git & GitHub</li>
         <li>Responsive Design</li>
+        <li>Python Flask</li>
       </ul>
       <h2>Interests</h2>
       <p>
