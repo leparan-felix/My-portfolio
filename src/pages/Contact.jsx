@@ -35,8 +35,7 @@ function Contact() {
       <form
         className="contact-form"
         onSubmit={handleSubmit}
-        action="https://formspree.io/f/YOUR_FORM_ID"  
-        method="POST"
+        
       >
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
