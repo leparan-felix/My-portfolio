@@ -1,20 +1,50 @@
 import React, { useState } from 'react';
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const handleSubmit = (e) => {
-    const email = e.target.email.value;
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { name, email, message } = formData;
+
+    // Gmail check
     if (!email.endsWith("@gmail.com")) {
-      e.preventDefault(); // Stop default submit
       setError("Only @gmail.com email addresses are allowed.");
       setSuccess("");
-    } else {
-      setError("");
-      setSuccess("Message sent successfully!");
-      // Let the form submit naturally to Formspree
+      return;
+    }
+
+    try {
+      const res = await fetch("https://your-backend-service.onrender.com/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setSuccess(data.message);
+        setError("");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setError("Failed to send message.");
+        setSuccess("");
+      }
+    } catch (err) {
+      setError("Something went wrong. Please try again later.");
+      setSuccess("");
     }
   };
 
@@ -32,14 +62,31 @@ function Contact() {
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {success && <p style={{ color: 'green' }}>{success}</p>}
 
-      <form
-        className="contact-form"
-        onSubmit={handleSubmit}
-        
-      >
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          value={formData.name}
+          onChange={handleChange}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          rows="5"
+          required
+          value={formData.message}
+          onChange={handleChange}
+        ></textarea>
         <button type="submit">Send Message</button>
       </form>
     </div>
