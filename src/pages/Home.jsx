@@ -1,11 +1,8 @@
 import React from "react";
 import passport from "../assets/Screenshot from 2025-04-29 12-54-45.png"; 
+// import Contact from "./Contact"; // adjust path if needed
 
 function Hero() {
-  const phoneNumber = "254705156999";
-  const cvLink =
-    "https://docs.google.com/document/d/1HeUkUyCHvEjSgx53fz3AZNvYr9_80LTCv5gKLx1WoBk/edit?tab=t.0";
-
   return (
     <section id="hero" className="hero">
       <div className="hero-content">
@@ -23,21 +20,10 @@ function Hero() {
           I am currently looking for opportunities to work on exciting projects
           and collaborate with talented teams.
         </p>
-        <div className="hero-buttons">
-        
-          <a href={`tel:+${phoneNumber}`} className="btn secondary">
-            Call Me
-          </a>
-          <a
-            href={`https://wa.me/${phoneNumber}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn primary"
-          >
-            WhatsApp Me
-          </a>
-         
-        </div>
+        {/* Removed buttons from here */}
+
+        {/* Insert Contact component here */}
+        {/* <Contact /> */}
       </div>
     </section>
   );

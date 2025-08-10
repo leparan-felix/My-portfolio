@@ -28,7 +28,9 @@ function Projects() {
           <div className="project-card" key={index}>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <a href={project.link} target="" rel="">View on GitHub</a>
+            {/* <a href={project.link} target="" rel="">View on GitHub</a> */}
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn primary"> view demo</a>
+            
           </div>
         ))}
       </div>
