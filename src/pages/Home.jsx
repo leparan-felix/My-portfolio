@@ -2,7 +2,6 @@ import React from "react";
 import passport from "../assets/Screenshot from 2025-04-29 12-54-45.png";
 
 function Hero() {
-  
   return (
     <section id="hero" className="hero">
       <div className="hero-container">
