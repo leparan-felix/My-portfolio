@@ -1,22 +1,26 @@
 import React from 'react';
 
-
 function Projects() {
   const projects = [
     {
       title: "Library App",
       description: "A React app with full CRUD functionality using JSON Server for managing a digital library.",
-      link: "https://github.com/leparan-felix/Library-app.git"
+      
+      demo: "https://library-app-ecmu.vercel.app/"
     },
     {
       title: "Expense Tracker",
-      description: "A Expense Tracker application built with React, using local storage to persist Expense.",
-      link: "https://github.com/leparan-felix/expense-tracker.git"
+      description: "An Expense Tracker application built with React, using local storage to persist Expense.",
+      
+      demo: "https://expense-tracker-app-1-three.vercel.app/"
     },
     {
-      title: "Notes App",
-      description: "Fetches real-time Notes data using an external API and displays it using clean UI components.",
-      link: "https://github.com/leparan-felix/Notes-app.git"
+      title: "Film Review App",
+      description: "A full-stack application for film enthusiasts to review and discuss movies, built with React and Flask.",
+      
+      demo: "https://film-fanatics-frontend.onrender.com/"
+
+
     }
   ];
 
@@ -28,9 +32,12 @@ function Projects() {
           <div className="project-card" key={index}>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            {/* <a href={project.link} target="" rel="">View on GitHub</a> */}
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn primary"> view demo</a>
-            
+            <div className="project-buttons">
+              
+              <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn primary">
+                View Demo
+              </a>
+            </div>
           </div>
         ))}
       </div>
