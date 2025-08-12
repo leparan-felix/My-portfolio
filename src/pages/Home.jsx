@@ -2,7 +2,7 @@ import React from "react";
 import passport from "../assets/Screenshot from 2025-04-29 12-54-45.png";
 
 function Hero() {
-  const phoneNumber = "254705156999";
+  
   return (
     <section id="hero" className="hero">
       <div className="hero-container">
@@ -24,7 +24,7 @@ function Hero() {
 
           <div className="hero-buttons">
             <a href="projects" className="btn primary">View My Work</a>
-            <a href="contact" className="btn secondary">Contact Me</a>
+            {/* <a href="contact" className="btn secondary">Contact Me</a> */}
           </div>
         </div>
       </div>
