@@ -2,6 +2,14 @@ import React from 'react';
 
 function Projects() {
   const projects = [
+    { title: "Decoupled Knowledge Graph", 
+      description: "A decoupled knowledge graph application built with React and Flask, allowing users to create, manage, and visualize interconnected data.",
+       demo: "https://knowledge-portal-next.vercel.app/" 
+      
+      
+
+    },
+
     {
       title: "Library App",
       description: "A React app with full CRUD functionality using JSON Server for managing a digital library.",

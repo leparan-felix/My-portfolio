@@ -6,11 +6,15 @@ import AboutMe from './pages/AboutMe';
 import NavBar from './componnets/NavBar';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
+import Footer from './componnets/Footer';
 
 function App() {
   return (
     <>
       <NavBar />
+    
+      
+      
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -18,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
       </Routes>
+        <Footer />
     </>
   );
 }
